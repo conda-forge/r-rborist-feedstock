@@ -1,4 +1,4 @@
-{% set version = '0.2-2' %}
+{% set version = "0.2-3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/Rborist_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rborist/Rborist_{{ version }}.tar.gz
-  sha256: ff28bdad57c087eb22b34918199646cc0ad4d1697b86953b4d44b205e015b842
+  sha256: f3b3f953ca99e0d17425ac6ba9a7b1e9d6098343abace575cdb492bca2a9c461
 
 build:
   merge_build_host: True  # [win]
