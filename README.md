@@ -3,6 +3,7 @@ About r-rborist-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rborist-feedstock/blob/main/LICENSE.txt)
 
+
 About r-rborist
 ---------------
 
@@ -11,6 +12,7 @@ Home: http://www.suiji.org/arborist, https://github.com/suiji/Arborist
 Package license: MPL (>= 2) | GPL (>= 2)
 
 Summary: Scalable implementation of classification and regression forests, as described by Breiman (2001), <DOI:10.1023/A:1010933404324>.
+
 About r-rborist
 ---------------
 
