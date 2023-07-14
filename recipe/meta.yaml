@@ -23,26 +23,25 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}              # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('cxx') }}            # [not win]
-    - {{ compiler('m2w64_cxx') }}      # [win]
+    - {{ compiler('c') }}          # [not win]
+    - {{ compiler('m2w64_c') }}    # [win]
+    - {{ compiler('cxx') }}        # [not win]
+    - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
   host:
-    - _openmp_mutex              # [linux]
+    - libgomp                      # [linux]
+    - llvm-openmp                  # [osx]
     - r-base
     - r-rcpp >=0.12.2
     - r-data.table >=1.9.8
     - r-digest
   run:
-    - _openmp_mutex              # [linux]
-    - r-base
     - {{ native }}gcc-libs         # [win]
-    - llvm-openmp                # [osx]
+    - r-base
     - r-rcpp >=0.12.2
     - r-data.table >=1.9.8
     - r-digest
@@ -54,10 +53,13 @@ test:
 
 about:
   home: http://www.suiji.org/arborist, https://github.com/suiji/Arborist
-  license: MPL (>= 2) | GPL (>= 2)
+  license: MPL-2.0 OR GPL-3.0-or-later
   summary: Scalable implementation of classification and regression forests, as described by Breiman (2001), <DOI:10.1023/A:1010933404324>.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license_file: 
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+    - LICENSE
 
 extra:
   recipe-maintainers:
