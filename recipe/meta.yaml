@@ -1,18 +1,18 @@
-{% set version = "0.3-11" %}
+{% set version = "0.3-12" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-rborist
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/Rborist_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/Rborist/Rborist_{{ version }}.tar.gz
-  sha256: 53db5641283bd61259b5726abd369686c48dec8f8fc4b7f49b8e26802211091c
+  sha256: d52238c6b20ed84479c5da3ccd2c26db8940014b4941422b3e602d5122323f79
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
